@@ -6,14 +6,20 @@
     "type": "git",
     "url": "git+https://github.com/iou90/vue-page-swiper.git"
   },
-  "keywords": ["vue", "vue3", "swiper"],
+  "keywords": [
+    "vue",
+    "vue3",
+    "swiper"
+  ],
   "author": "iou90 <iou90@outlook.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/iou90/vue-page-swiper/issues"
   },
   "homepage": "https://github.com/iou90/vue-page-swiper#readme",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "dist/vue-page-swiper.umd.cjs",
   "module": "dist/vue-page-swiper.js",
   "types": "dist/types/index.d.ts",
@@ -55,8 +61,8 @@
     "prettier": "^3.0.0",
     "typescript": "^5.1.6",
     "vite": "^4.4.7",
-    "vue-tsc": "^1.8.6",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.4"
+    "vue-router": "^4.2.4",
+    "vue-tsc": "^1.8.6"
   }
 }
