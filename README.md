@@ -1,2 +1,2 @@
 # vue-page-swiper
-vue3 page-swiper plugin
+vue3 page swiper with navigation direction specific transitions
