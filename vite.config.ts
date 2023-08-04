@@ -11,12 +11,16 @@ export default defineConfig({
     host: "0.0.0.0"
   },
 
+  optimizeDeps: {
+    exclude: ["vue-page-swiper"]
+  },
+
   build: {
     outDir: "./dist",
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       name: libName,
-      fileName: (format) => `${libName}.${format}.js`
+      fileName: libName
     },
     rollupOptions: {
       external: ["vue"],

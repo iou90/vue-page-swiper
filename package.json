@@ -1,7 +1,7 @@
 {
   "name": "vue-page-swiper",
   "version": "0.1.0",
-  "description": "vue3 page-swiper plugin",
+  "description": "vue3 page swiper with navigation direction specific transitions",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iou90/vue-page-swiper.git"
@@ -17,12 +17,14 @@
     "url": "https://github.com/iou90/vue-page-swiper/issues"
   },
   "homepage": "https://github.com/iou90/vue-page-swiper#readme",
+  "type": "module",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
-  "main": "dist/vue-page-swiper.umd.cjs",
-  "module": "dist/vue-page-swiper.js",
-  "types": "dist/types/index.d.ts",
+  "main": "./dist/vue-page-swiper.umd.cjs",
+  "module": "./dist/vue-page-swiper.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/vue-page-swiper.js",
@@ -32,7 +34,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && npm run build:types",
-    "build:types": "vue-tsc --project tsconfig.types.json --declaration --emitDeclarationOnly --outDir dist/types",
+    "build:types": "vue-tsc --emitDeclarationOnly",
     "lint:fix": "eslint --ext .ts,.vue . --fix --cache"
   },
   "lint-staged": {
@@ -48,21 +50,21 @@
   },
   "devDependencies": {
     "@types/node": "^20.4.1",
-    "@typescript-eslint/eslint-plugin": "^6.2.0",
-    "@typescript-eslint/parser": "^6.2.0",
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/eslint-config-typescript": "^11.0.2",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^5.0.0",
-    "eslint-plugin-vue": "^9.15.1",
+    "eslint-plugin-vue": "^9.16.0",
     "husky": "4.3.8",
     "lint-staged": "11.2.6",
-    "prettier": "^3.0.0",
+    "prettier": "^3.0.1",
     "typescript": "^5.1.6",
-    "vite": "^4.4.7",
+    "vite": "^4.4.8",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4",
-    "vue-tsc": "^1.8.6"
+    "vue-tsc": "^1.8.8"
   }
 }
