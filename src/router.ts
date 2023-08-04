@@ -34,11 +34,6 @@ export const buildRouter: (options: RouterOptions) => Router = ({ routes, histor
       setDirection(Direction.Forward)
     }
   })
-  router.afterEach(() => {
-    setDirection(Direction.Unknown)
-  })
 
   return router
 }
-
-export const routerKey = "pageSwiperRouter"

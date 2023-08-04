@@ -1,15 +1,16 @@
 import { App } from "vue"
 import { RouterOptions } from "vue-router"
 
-import { buildRouter, routerKey } from "./router"
+import { buildRouter } from "./router"
 import { pageSwiperPlugin } from "./install"
+import { usePageSwiper } from "./pageSwiper"
 
-export const VuePageSwiper: (app: App<Element>, options: RouterOptions) => void = (app, options) => {
-  const router = buildRouter(options)
-  app.provide(routerKey, router)
+const VuePageSwiper: (app: App<Element>, options: RouterOptions) => App<Element> = (app, options) => {
   app.use(pageSwiperPlugin)
+  const router = buildRouter(options)
+  app.use(router)
 
   return app
 }
 
-export { pageSwiper } from "./pageSwiper"
+export { VuePageSwiper, usePageSwiper }

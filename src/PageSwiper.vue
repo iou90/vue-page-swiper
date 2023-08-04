@@ -2,7 +2,7 @@
 import { ComputedRef, KeepAliveProps, computed, toRefs } from "vue"
 
 import { onceTransitionName, resetOnceTransitionName } from "./pageSwiper"
-import { Direction, direction } from "./direction"
+import { Direction, direction, setDirection } from "./direction"
 
 const props = withDefaults(
   defineProps<{
@@ -43,6 +43,7 @@ const beforeEnter = () => emit("transitionBegin")
 
 const afterLeave = () => {
   resetOnceTransitionName()
+  setDirection(Direction.Unknown)
   emit("transitionEnd")
 }
 </script>
