@@ -1,12 +1,22 @@
 <script setup lang="ts">
-// import { usePageSwiper } from "../src"
+import { usePageSwiper } from "../src"
 
-// const next = () => pageSwiperRouter.push("/page2")
+const { push, back } = usePageSwiper()
+
+const next = () => push("/page3")
+const goBack = () => back()
 </script>
 
 <template>
-  <div class="page">
-    <p v-for="index in 30" :key="index">page2: balabalbalbalblablablalbalb {{ index }}</p>
-    <!-- <button @click="next">next</button> -->
+  <div class="page page2">
+    <div class="title">Page 2</div>
+    <button @click="next">next</button>
+    <button @click="goBack">back</button>
   </div>
 </template>
+
+<style scoped>
+.page2 {
+  background-color: rgb(211, 122, 7);
+}
+</style>
