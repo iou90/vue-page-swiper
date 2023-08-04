@@ -29,7 +29,14 @@ export const buildRouter: (options: RouterOptions) => Router = ({ routes, histor
     routes: parseRoutes(routes)
   })
 
-  router.beforeEach(() => {
+  router.beforeEach((to, from) => {
+    // no direction between parent & child routes
+    if (to?.meta?.isChild || from?.meta?.isChild) {
+      setDirection(Direction.Unknown)
+
+      return
+    }
+
     if (window.event?.type == "popstate" && direction.value !== Direction.Back) {
       setDirection(Direction.Forward)
     }

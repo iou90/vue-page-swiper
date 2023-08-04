@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ComputedRef, KeepAliveProps, computed, toRefs } from "vue"
 
-import { onceTransitionName, resetOnceTransitionName } from "./pageSwiper"
+import { onceTransitionName, resetOnceTransitionName, onceTransitionMode, resetOnceTransitionMode } from "./pageSwiper"
+import { TransitionMode } from "./transitionMode"
 import { Direction, direction, setDirection } from "./direction"
 
 const props = withDefaults(
@@ -34,6 +35,14 @@ const transitionName: ComputedRef<string> = computed(() => {
   }
 })
 
+const transitionMode: ComputedRef<TransitionMode> = computed(() => {
+  if (onceTransitionMode.value) {
+    return onceTransitionMode.value
+  }
+
+  return "default"
+})
+
 const emit = defineEmits<{
   (e: "transitionEnd"): void
   (e: "transitionBegin"): void
@@ -43,6 +52,7 @@ const beforeEnter = () => emit("transitionBegin")
 
 const afterLeave = () => {
   resetOnceTransitionName()
+  resetOnceTransitionMode()
   setDirection(Direction.Unknown)
   emit("transitionEnd")
 }
@@ -50,7 +60,7 @@ const afterLeave = () => {
 
 <template>
   <router-view v-slot="{ Component, route }">
-    <transition :name="transitionName" @afterLeave="afterLeave" @beforeEnter="beforeEnter">
+    <transition :name="transitionName" :mode="transitionMode" @afterLeave="afterLeave" @beforeEnter="beforeEnter">
       <keep-alive v-if="keepAlive" v-bind="keepAlive">
         <component :is="Component" />
       </keep-alive>
