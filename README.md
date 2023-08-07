@@ -4,7 +4,7 @@ vue3 & vue router 4 page swiper with navigation direction specific transitions.
 
 [![NPM Version](http://img.shields.io/npm/v/vue-page-swiper.svg?style=flat-square)](https://www.npmjs.com/package/vue-page-swiper)
 
-## showcases with default transitions
+## showcase
 ![vue-page-swiper](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWw2Nm41cmF2dnd0NHBtaXFhMzh5Zno3aTlvYjVqdTBqZDQ4cWlzOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SOw3NsjFzfIxO5oj2Q/giphy.gif)
 
 ## usage
