@@ -1,7 +1,7 @@
 {
   "name": "vue-page-swiper",
   "version": "0.1.0",
-  "description": "vue3 page swiper with navigation direction specific transitions",
+  "description": "vue3 & vue router 4 page swiper with navigation direction specific transitions",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iou90/vue-page-swiper.git"
