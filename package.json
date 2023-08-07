@@ -19,8 +19,7 @@
   "homepage": "https://github.com/iou90/vue-page-swiper#readme",
   "type": "module",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "main": "./dist/vue-page-swiper.umd.cjs",
   "module": "./dist/vue-page-swiper.js",
