@@ -22,6 +22,7 @@
   ],
   "type": "module",
   "module": "./dist/vue-page-swiper.js",
+  "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/types/index.d.ts",
