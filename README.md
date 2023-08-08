@@ -60,12 +60,21 @@ import { usePageSwiper } from "vue-page-swiper"
 // vue router 4 navigation methods
 const { push, replace, back, forward } = usePageSwiper()
 
-// to type: https://router.vuejs.org/api/#RouteLocationRaw
 // navigation with direction specific transitions
 // default transitions: 
 // forward: swipe-right
 // back: swipe-left
 push("/page2")
+
+// to type: https://router.vuejs.org/api/#RouteLocationRaw
+// guide: https://router.vuejs.org/guide/essentials/navigation.html#Programmatic-Navigation
+push({
+  path: "/page2",
+  // name: "page2",
+  // query: { source: "dev" },
+  // params: { username: "eduardo" }
+  // hash: "#section5"
+})
 
 replace(
     "/page3",
