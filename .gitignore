@@ -17,3 +17,6 @@ dist
 *.njsproj
 *.sln
 *.sw?
+
+# Bundle visualizer
+stats.html

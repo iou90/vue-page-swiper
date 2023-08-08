@@ -17,23 +17,22 @@
     "url": "https://github.com/iou90/vue-page-swiper/issues"
   },
   "homepage": "https://github.com/iou90/vue-page-swiper#readme",
-  "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/vue-page-swiper.umd.cjs",
+  "type": "module",
   "module": "./dist/vue-page-swiper.js",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/vue-page-swiper.js",
-      "require": "./dist/vue-page-swiper.umd.cjs"
-    }
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/vue-page-swiper.js"
+    },
+    "./dist/style.css": "./dist/style.css"
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npm run build:types",
-    "build:types": "vue-tsc --emitDeclarationOnly",
+    "build": "rimraf dist && vite build && vue-tsc",
+    "analyze": "ANALYZE=true vite build",
     "lint:fix": "eslint --ext .ts,.vue . --fix --cache"
   },
   "lint-staged": {
@@ -60,6 +59,7 @@
     "husky": "4.3.8",
     "lint-staged": "11.2.6",
     "prettier": "^3.0.1",
+    "rollup-plugin-visualizer": "^5.9.2",
     "typescript": "^5.1.6",
     "vite": "^4.4.8",
     "vue": "^3.3.4",

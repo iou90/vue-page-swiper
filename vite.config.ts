@@ -1,11 +1,17 @@
 import { resolve } from "node:path"
 import { defineConfig } from "vite"
 import vue from "@vitejs/plugin-vue"
-
-const libName = "vue-page-swiper"
+import { visualizer } from "rollup-plugin-visualizer"
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    process.env.ANALYZE === "true" &&
+      visualizer({
+        filename: "stats.html",
+        open: true
+      })
+  ],
 
   server: {
     host: "0.0.0.0"
@@ -17,14 +23,18 @@ export default defineConfig({
 
   build: {
     outDir: "./dist",
+    emptyOutDir: false,
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
-      name: libName,
-      fileName: libName
+      name: "VuePageSwiper",
+      formats: ["es"],
+      fileName: "vue-page-swiper"
     },
     rollupOptions: {
-      external: ["vue"],
-      output: { globals: { vue: "Vue" } }
+      external: ["vue", "vue-router"],
+      output: {
+        globals: { vue: "Vue", "vue-router": "VueRouter " }
+      }
     }
   }
 })
