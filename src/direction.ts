@@ -8,6 +8,6 @@ export enum Direction {
 
 export const direction: Ref<Direction> = ref(Direction.Unknown)
 
-export const setDirection = (value) => {
+export const setDirection: (value: Direction) => void = (value) => {
   direction.value = value
 }
